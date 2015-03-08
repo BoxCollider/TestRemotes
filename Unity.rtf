@@ -1,0 +1,185 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww19560\viewh10360\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\b\fs40 \cf0 UNITY OVERVIEW\
+\
+
+\fs28 UNITY BASICS\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b0\fs24 \cf0 Search in search field - CMD F\
+Search one thing or several things - logical AND\
+Search by type t:Texture\
+Search by label l:Weapon\
+\
+Shortcuts:\
+Select all visible: CMD A\
+Duplicate: CMD D\
+Delete: CMD BACKSPACE\
+Rename: Enter\
+Open asset: CMD DOWN ARROW\
+Expand folder/asset: RIGHT ARROW\
+Collapse folder/asset: LEFT ARROW\
+Expand recursive: ALT RIGHT ARROW \
+Collapse recursive: ALT LEFT ARROW\
+\
+Parenting: GameObject as child of another GameObject \
+\
+1. Toolbar: consists of 5 basic controls\
+Transform tools:\
+Q hand\
+W translate\
+E rotate\
+R scale\
+T rect transform\
+\
+2. Transform gizmo toggles\
+Z tool handle position\
+X tool handle rotation\
+\
+3. Play, Pause, Step controls\
+Play CMD P\
+Pause SHIFT CMD P\
+Step ALT CMD P\
+\
+4. Layers and tags\
+\
+5. Layout configurations\
+\
+Scene view:\
+Use ARROWS to move scene camera on XY plane\
+Hold SHIFT to speed scene camera movement\
+Scroll with mouse (trackpad 2 fingers scroll) to move scene camera on Z plane\
+Hold right mouse button (press and hold trackpad with 2 fingers ) for flythrough mode \
+In flythrough mode mouse pointer becomes eye with 4 little squares\
+In flythrough mode use WASD QE to navigate\
+IN flythrough mode dragging rotates scene view camera around itself\
+Select object in scene and press F to center selection (move scene camera)\
+Select object in hierarchy and press SHIFT F or F F to centre selection  (move scene camera)\
+\
+Hold ALT button to transform scene view camera and:\
+Mouse drag LEFT to orbit scene camera around current pivot point, trackpad 3 fingers move\
+Mouse drag RIGHT to move scene view camera forward and back (ZOOM), (press and hold trackpad with 2 fingers )\
+Mouse drag MIDDLE to move scene view camera left and right (no trackpad support)\
+Trackpad 4 fingers move to set gizmo view - top, left \'85\
+\
+Game view:\
+Allows preview for actual game\
+Inspector:\
+Shows selected object components\
+We can assign custom icons for game objects (Textures from assets) (Disable scene view 3D gizmos checkbox)\
+\
+Labels: applied to asset\
+Each asset can have multiple labels\
+We can create own labels\
+\
+Editor Views:\
+Can be repositioned, detached, closed\
+Use Layout dropdown (top-right) to save snapshots\
+Add new attached tab when clicking right menu icon on existing tab\
+Use Window menu to invoke new floating tab\
+\
+Tab shortcuts CMD 0\'859\
+CMD 0 Version control\
+CMD 1 Scene\
+CMD 2 Game\
+CMD 3 Inspector\
+CMD 4 Hierarchy\
+CMD 5 Project\
+CMD 6 Animation\
+CMD 7 Profiler\
+CMD 8 Audio mixer\
+CMD 9 Asset store\
+CMD SHIFT C Console\
+\
+Views (inspector and Project) can be locked - click on lock icon\
+You can have several of these in editor\
+\
+Assets:\
+For FXB files you must have FXB exporter of your modelling package\
+\
+Prefabs:\
+Drag GameObject from Scene to Project view in order to create prefab\
+Update prefab - GameObject->Apply changes to prefab\
+Tear prefab connection - GameObject->Break prefab  instance \
+\
+Other shortcuts:\
+V Vertex snap\
+CMD drag Snap\
+\
+Cmd SHIFT N New GameObject\
+CMD ALT F Move to view (moves object forward from scene camera)\
+CMD SHIFT F Align with view (moves object at scene camera position)\
+CMD R Refresh asset\
+CMD B Build and run\
+\
+Preferences:\
+Unity->Preferences\
+\
+Inspector has debug mode where all the variables are visible\
+When GameObject has tag  \'93EditorOnly\'94 it is not exported in build process
+\b\fs28 \
+\
+BUILDING SCENES\
+\
+
+\b0\fs24 GameObjects:\
+Everything in game is GameObject\
+GameObject can be activated/desactivated from inspector or code\
+When deactivated children are also deactivated BUT their activeSelf (local active) property is not touched\
+activeSelf remembers object state when used in parenting\
+Instead activeInHierarchy (global active )property is modified in order to be consistent when parent is reactivated \
+Game objects consist of Components\
+Transform component is mandatory - responsible for location of game object\
+Holds position, scale , rotation, children\
+\
+Components:\
+Can be added, reset to defaults, removed, moved up/down, copied/pasted\
+We can change Component in play mode for testing\
+Changes are reverted when we stop the game in editor (does\'92t apply for materials)\
+\
+MonoBehaviour:\
+Represent s Component\
+Script for modifying state at runtime\
+\
+Tags:\
+Used to identify GameObjects for scripting purposes\
+Tags are visible and modifiable trough Tag dropdown in Inspector view\
+GameObject can have only one tag\
+\
+Static GameObject:\
+Checkbox in Inspector for optimization\
+\
+Inspector changes synchronously with selected game object\
+We can set properties of multiple GameObjects at a time in Inspector\
+Properties of  GameObject in Inspector are Values and References\
+\
+Preset Libraries\
+Contain user created data and persist between sessions\
+Integrated with Color picker, Gradient Editor, Curve Editors\
+Preset is something saved by user\
+Preset Library is collection of presses\
+Preset Library can be saved in user preferences folder or in Assets/Editor folder\
+Project Preset Libraries can be added to revision control for easy sharing or added to Asset Store Packages\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b\fs28 \cf0 CREATING GAMEPLAY
+\b0\fs24 \
+
+\b\fs40 \
+EDITOR\
+GRAPHICS\
+PHYSICS\
+SCIPTING\
+AUDIO\
+ANIMATION\
+UI\
+NAVIGATION AND PATHFINDING\
+ARCHITECTURE\
+HOW TO CONTRIBUTE\
+PLATFORM SPECIFIC}
