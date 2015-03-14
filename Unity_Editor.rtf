@@ -17,15 +17,15 @@ Menu bar command\
 
 \b0 \cf2 \expnd0\expndtw0\kerning0
 \
-UnityEditor.Attributes.\cf2 \expnd0\expndtw0\kerning0
-MenuItem\cf2 \expnd0\expndtw0\kerning0
-\
+UnityEditor.Attributes.MenuItem\
 Contains static void method\
 Supports validation\
 Supports shortcut assignment\
 \
+\pard\pardeftab720
 
-\b Custom inspector\
+\b \cf2 \expnd0\expndtw0\kerning0
+Custom inspector\
 \
 \pard\pardeftab720
 
@@ -33,41 +33,64 @@ Supports shortcut assignment\
 UnityEditor.Attributes.CustomEditor\
 \
 \
+\pard\pardeftab720
 
-\b Property attributes\
+\b \cf2 \expnd0\expndtw0\kerning0
+Property attributes\
+\pard\pardeftab720
 
-\b0 \
+\b0 \cf2 \expnd0\expndtw0\kerning0
+\
 UnityEngine.Attributes\
 Range\
 \
+\pard\pardeftab720
 
-\b Property Drawer\
+\b \cf2 \expnd0\expndtw0\kerning0
+Property Drawer\
+\
+\pard\pardeftab720
+
+\b0 \cf2 \expnd0\expndtw0\kerning0
+Customise every instance of Serializable class in Editor
+\b \expnd0\expndtw0\kerning0
 \
 
-\b0 Customise every instance of Serializable class in Editor
-\b \
+\b0 \expnd0\expndtw0\kerning0
+UnityEditor.Attributes.CustomPropertyDrawer\
+\
+\pard\pardeftab720
 
-\b0 UnityEditor.Attributes.CustomPropertyDrawer\
+\b \cf2 \expnd0\expndtw0\kerning0
+Decorator Drawer\
+\
+\pard\pardeftab720
+
+\b0 \cf2 \expnd0\expndtw0\kerning0
+Add decoration SpaceAttribute and HeaderAttribute to inspector
+\b \expnd0\expndtw0\kerning0
 \
 
-\b Decorator Drawer\
+\b0 \expnd0\expndtw0\kerning0
+UnityEditor.Attributes.CustomPropertyDrawer\
 \
+\pard\pardeftab720
 
-\b0 Add decoration SpaceAttribute and HeaderAttribute to inspector
-\b \
+\b \cf2 \expnd0\expndtw0\kerning0
+EditorWindow\
+\pard\pardeftab720
 
-\b0 UnityEditor.Attributes.CustomPropertyDrawer\
+\b0 \cf2 \expnd0\expndtw0\kerning0
 \
-
-\b EditorWindow\
-
-\b0 \
 Custom window. Similar to inspector\
 UnityEditor.EditorWindow\
 \
+\pard\pardeftab720
 
-\b Scriptable Object
-\b0 \
+\b \cf2 \expnd0\expndtw0\kerning0
+Scriptable Object
+\b0 \expnd0\expndtw0\kerning0
+\
 \
 UnityEngine.ScriptableObject\
 Similar to MonoBehaviour but not in the scene\
@@ -75,27 +98,83 @@ Can create asset that lives in our project view\
 Ideally suited for data\
 \
 
-\b Gizmos\
+\b \expnd0\expndtw0\kerning0
+Gizmos\
 \
+\pard\pardeftab720
 
-\b0 Draw helper thing into the scene view and game view\
+\b0 \cf2 \expnd0\expndtw0\kerning0
+Draw helper thing into the scene view and game view\
 call in OnDrawGizmos and  OnDrawGizmosSelected methods\
 \
+\pard\pardeftab720
 
-\b ExecuteInEditMode\
+\b \cf2 \expnd0\expndtw0\kerning0
+ExecuteInEditMode\
+\pard\pardeftab720
 
-\b0 UnityEngine.Attributes.ExecuteInEditMode\
+\b0 \cf2 \expnd0\expndtw0\kerning0
+UnityEngine.Attributes.ExecuteInEditMode\
 Calls some methods when game is in the edit mode\
 \
+\pard\pardeftab720
 
-\b Editor Callbacks\
+\b \cf2 \expnd0\expndtw0\kerning0
+Editor Callbacks\
+\pard\pardeftab720
 
-\b0 EditorApplication.update event (called 100 times per second)\
+\b0 \cf2 \expnd0\expndtw0\kerning0
+EditorApplication.update event (called 100 times per second)\
 Editor.OnSceneGUI event\
 \
+\pard\pardeftab720
 
-\b AssetBundles\
+\b \cf2 \expnd0\expndtw0\kerning0
+AssetBundles\
+\pard\pardeftab720
 
-\b0 \
+\b0 \cf2 \expnd0\expndtw0\kerning0
 \
-}
+\pard\pardeftab720
+
+\b \cf2 \expnd0\expndtw0\kerning0
+Special folders\
+\pard\pardeftab720
+
+\b0 \cf2 \expnd0\expndtw0\kerning0
+\
+Assets\
+\
+Project and game assets\
+Structure corresponds to project view\
+\
+Editor\
+\
+Assets used only in development stage\
+We can have multiple Editor folders in a project\
+\
+Editor Default Resources\
+\
+Place at top level in Assets folder\
+Used in development mode to retrieve resources by EditorGUIUtility.Load method\
+\
+Gizmos\
+\
+Adds graphics to the scene view to help visualise design details\
+Usually used with Gizmos.draw\'85 inside OnDrawGizmos method\
+\
+Resources\
+\
+Load resources on demand with Resources.Load method\
+\
+Standard Assets folder\
+\
+Default location for stock Unity supporting assets\
+\
+Streaming Assets\
+\
+Folder for raw files , unchanged during import\
+\
+WebPlayerTemplates\
+\
+Folder for custom template in Web Player builds}
