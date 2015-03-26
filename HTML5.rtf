@@ -1,0 +1,242 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red205\green38\blue5;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh7760\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 1. \
+Structure - elements and text.\
+Each element has start tag and end tag.\
+Elements can have attributes.\
+Attributes are placed inside start tag and consist of a name and a value, separated by an \'93=\'94 character.\
+Attributes can be unquoted only if they don\'92t contain special characters\
+Web browsers parse this markup into DOM tree. DOM tree is in memory representation of a document.\
+\
+Root element is HTML\
+Contains 2 elements HEAD and BODY  as well as text node between them\
+\
+HEAD contains TITLE element\
+Scripts can be embedded with SCRIPT tag or event handling content attributes\
+\
+CSS used for special rendering on screen.\
+\
+META is contained in HEAD element\
+META does not need to be closed\
+charset=UTF-8\
+\
+2.\
+SECURITY\
+Not validating user input\
+Cross-site scripting\
+SQL injection\
+Cross site request forgery\
+Clickjacking\
+\
+3.Execution of scripts\
+Scripts have \'93run to completion semantics\'94 \
+Html parsing is async\
+Result - race condition\
+\
+Add element trough script at the end GOOD\
+xxx.onload\
+xxx.addEventListener(load,handler,false)\
+\
+Add element statically and after that add script element who queries that element BAD\
+\
+3.\
+VALIDADORS\
+Nu markup validator\
+\
+4.\
+PRESENTATIONAL MARKUP\
+Removed except style attribute(for prototyping) and style element\
+Some old presentational elements are redefined to be media independent\
+b,i,hr,s,small,u\
+\
+5.DOCUMENT ADDRESS\
+Absolute URL\
+\
+Browsers must expose UI with document address - user can tell if 1 site can impersonate another\
+Document can be created by script using createDocument or create HTMLDocument API\
+\
+Document referrer is Absolute URL\
+Can be set when document is created\
+If not set - value is  empty string\
+\
+DOM specification defines Document interface\
+sections - Metadata, DOM Tree access, Dynamic markup insertion, Interaction, state EventHandler\
+\
+6.CONTENT MODELS\
+Each element falls under some semantic category (or more)\
+Element Attributes can having string value\
+Content model - Description of expected comments of an element\
+CATEGORIES\
+\
+Metadata: Sets presentation of other elements or links to other documents \
+
+\fs26 \expnd0\expndtw0\kerning0
+base,
+\fs32 \expnd0\expndtw0\kerning0
+ 
+\fs26 \expnd0\expndtw0\kerning0
+link,
+\fs32 \expnd0\expndtw0\kerning0
+ 
+\fs26 \expnd0\expndtw0\kerning0
+meta,
+\fs32 \expnd0\expndtw0\kerning0
+ 
+\fs26 \expnd0\expndtw0\kerning0
+noscript,
+\fs32 \expnd0\expndtw0\kerning0
+ 
+\fs26 \expnd0\expndtw0\kerning0
+script,
+\fs32 \expnd0\expndtw0\kerning0
+ 
+\fs26 \expnd0\expndtw0\kerning0
+style,
+\fs32 \expnd0\expndtw0\kerning0
+ 
+\fs26 \expnd0\expndtw0\kerning0
+template,
+\fs32 \expnd0\expndtw0\kerning0
+ 
+\fs26 \expnd0\expndtw0\kerning0
+title\
+
+\fs24 \kerning1\expnd0\expndtw0 \
+Flow content: For most elements in BODY\
+\
+Sectioning content: Defines scope for headings and footers\
+article, aside, nav, section\
+\
+Heading content: Defines header for a section\
+h1\'85h6\
+\
+Phrasing content: Text and elements that mark up that text t intra paragraph level\
+\
+Embedded content: audio, canvas, embed, iframe, img, math, object, svg, video\
+Interactive content: a audio (if the controls attribute is present) button embed iframe img (if the usemap attribute is present) input (if the type attribute is not in the hidden state) keygen label object (if the usemap attribute is present) select textarea video (if the controls attribute is present)\
+\
+7. Script supporting elements:\
+SCRIPT, TEMPLATE\
+\
+8. PARAGRAPHS\
+tag P is one of many ways to define paragraph\
+\
+9. COMMON ATTRIBUTES FOR HTML ELEMENTS\
+accesskey- Defines keyboard shortcut\
+class - Defines which classes element belongs to (comma separated strings)\
+contenteditable\
+dir -text direction\
+hidden\
+id -at least 1 character unique element identifier\
+lang\
+spellcheck\
+style - inline styling\
+tabindex\
+title - popup explanation for an element\
+translate\
+\
+10. COMMON EVENTS\
+onXXX\
+\
+11.\
+In HTML xmlns attribute has no meaning\
+\
+12. HTM ELEMENTS\
+\
+HTML - root element\
+Has children HEAD and BODY\
+\
+HEAD element - Metadata as collection\
+Used as FIRST element in HTML element\
+\
+TITLE - Metadata content (In HEAD tag)\
+There must not be more than one title in a document\
+\
+BASE - Can specify document base URL for the purposes of resolving RELATIVE URLs \
+Must have href, target or both attributes\
+\
+LINK\
+allows to link to other resources\
+destination is given by href attribute\
+must have rel attribute\
+if rel attribute is used, element is restricted to HEAD element\
+Can create 2 types of links - external resource or hyperlinks\
+media attribute To which media applies that page\
+type attribute - MIME type\
+\
+\uc0\u1052 \u1045 \u1058 \u1040 \
+Everything else\
+application-name\
+author\
+description\
+generator\
+keywords\
+when http-equid attribute is used, that element is pragma directive\
+\
+STYLE\
+media attribute\
+type attribute text/css default\
+@media block -restrict some styles\
+\
+13. SECTIONS\
+\
+BODY element -represents content of a document\
+implements some event handlers from Window object\
+events bubble in-out\
+\
+ARTICLE element - complete or self contained thing\
+independent\
+can be nested\
+\
+SECTION part of something\
+Generic section for grouping content thematic.\
+the theme must be identified using h1-h6 elements as children\
+\
+NAV element\
+section with navigation links\
+\
+ASIDE element\
+sidebars\
+\
+H1-H6\
+Heading for a section\
+\
+HEADER introductory content for nearest ancestor\
+\
+FOOTER footer for the nearest ancestor\
+\
+ADDRESS contact info for nearest article or body ancestor\
+\
+14. GROUPS\
+\
+P element\
+represents paragraph\
+\
+HR element\
+paragraph level thematic break\
+\
+PRE element - present that as-is\
+\
+BLOCKQUOTE element\
+Content quoted from another source\
+\
+OL ordered list\
+must contain at least one LI list item element\
+attributes:\
+reversed\
+start\
+type(in CSS list-style-type)\
+\
+UL unordered list\
+\
+LI list item\
+can have value attribute as digit (ordinal number)\
+\
+DL element\
+association list consisting of zero or more name-value groups(description list)\
+DT name\
+DD value (DT can contain multiple DD) tabulated content}
