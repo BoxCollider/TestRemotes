@@ -1,10 +1,13 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;\red205\green38\blue5;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh7760\viewkind0
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9960\viewh12800\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\f0\fs24 \cf0 1. \
+\f0\b\fs36 \cf0 http://www.w3.org/TR/html5/
+\b0\fs24 \
+\
+1. \
 Structure - elements and text.\
 Each element has start tag and end tag.\
 Elements can have attributes.\
@@ -73,8 +76,9 @@ Content model - Description of expected comments of an element\
 CATEGORIES\
 \
 Metadata: Sets presentation of other elements or links to other documents \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\fs26 \expnd0\expndtw0\kerning0
+\fs26 \cf0 \expnd0\expndtw0\kerning0
 base,
 \fs32 \expnd0\expndtw0\kerning0
  
@@ -104,8 +108,9 @@ template,
  
 \fs26 \expnd0\expndtw0\kerning0
 title\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\fs24 \kerning1\expnd0\expndtw0 \
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \
 Flow content: For most elements in BODY\
 \
 Sectioning content: Defines scope for headings and footers\
@@ -238,5 +243,408 @@ can have value attribute as digit (ordinal number)\
 \
 DL element\
 association list consisting of zero or more name-value groups(description list)\
+\
 DT name\
-DD value (DT can contain multiple DD) tabulated content}
+\
+DD value (DT can contain multiple DD) tabulated content\
+\
+FIGURE Self contained content\
+can be used to annotate illustrations, diagrams, charts, photos, code listings\
+captions added with FIGCAPTION element.\
+\
+FIGCAPTION - caption or legend for parent FIGURE element\
+\
+MAIN main content of the body\
+not sectioning content\
+unique content not repeating across pages\
+\
+15. TEXT ELEMENTS\
+\
+A\
+attributes:\
+href: address of hyperlink\
+target: same tab new tab\
+download: download or navigate to element \
+rel: relation to destination resource\
+hreflang: language of linked resource\
+type: hint for the type of resource\
+\
+if A has href, then it is a hyperlink\
+if a has not href, it is a placeholder\
+\
+absolute url \'93http://www.gbg.bg\'94\
+relative url \'93links.html\'94\
+element with id #header\
+other protocols: https:// ftp:// mailto: file:\
+script \'93javascript:alert(\'91Hello\'92);\'94\
+\
+\
+EM\
+Emphasized text\
+do not use as italic (use I instead)\
+\
+STRONG\
+Expresses importance seriousness urgency\
+\
+SMALL\
+\pard\pardeftab720
+\cf0 Small print typically features disclaimers, caveats, legal restrictions, or copyrights.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+S\
+deprecated, strike through text\
+\
+CITE\
+reference to any create work\
+\
+Q\
+quoted text\
+\
+DFN\
+\pard\pardeftab720
+\cf0 defining instance of a term or acronym\
+\
+ABBR\
+abbreviation or acronym,\
+\
+DATA\
+\
+TIME\
+\
+CODE\
+\
+VAR\
+\
+SAMP\
+sample of output of program\
+\
+KBD\
+\
+SUB SUP\
+subscript and superscript\
+\
+I\
+italic\
+\
+B\
+bold\
+\
+U\
+uderline\
+\
+MARK\
+sets coloured background\
+\
+RUBY, RB, RT, RTC, RP\
+\
+BDI\
+bidirectional text\
+\
+BDO\
+explicit text directionality formatting control for its children.\
+\
+SPAN\
+Does not mean anything by itself\
+used for class marking and styling\
+inline element\
+\
+BR\
+line break\
+Use for things that are part of the content, not for separating different things\
+\
+WBR\
+line breaking opportunity\
+\
+16. EDITS ELEMENTS\
+\
+INS\
+Addition to the document\
+\
+DEL\
+Removal from the document\
+\
+cite and diatomite attributes may be used with INS and DEL elements\
+\
+17. EMBEDDED CONTENT\
+\
+IMG tag - represents image\
+images must be static bitmaps, single page vetor docs(PDF,XML with SVG root element), animated bitmaps\
+(APNG, GIF), animate vector graphics(XML with SVG root element that use declarative SMIL animation)\
+do not use it for layout tool and transparent images\
+Image states: unavailable, partially available\
+attributes:\
+alt: description if image can not be loaded\
+src: image address\
+cross origin - images from 3 party sites that allow cross-origin access to be used with canvas\
+use map - associates image map with image\
+ismap\
+width\
+height\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 IFRAME nested browsing context\
+attributes:\
+src - address of the image\
+srcdoc - document to render in the iframe\
+name - name of nesting browsing context\
+sandbox - security rules for nesting content\
+width\
+height\
+\
+EMBED integration of external application content\
+attributes:\
+src\
+type mime type\
+width\
+height\
+\
+OBJECT represents external resource . 3 types depending on type - image, nested browsing context, ext resource that must be processed by plugin\
+attributes:\
+data: address\
+type: mime type\
+typemustmatch:\
+name: valid browsing context name\
+usemap: \
+form\
+width\
+height\
+\
+PARAM - parameters of plugin invoked by OBJECT element\
+attributes:\
+name\
+value\
+\
+VIDEO - video,movie,audiophile with caption\
+attributes:\
+src\
+crossorigin\
+poster: image when no video data is available\
+preload\
+autoplay\
+mediagroup\
+loop\
+muted\
+controls\
+width\
+height\
+\
+AUDIO audio content\
+\
+SOURCE alternative media resources\
+\
+TRACK - text tracks for timed elements\
+\
+AREA- hyperlink with some text and a corresponding area on an image map, or a dead area on an image map\
+\
+MATH - MathML namespace\
+\
+SVG - svg namespace\
+\
+18. LINKS\
+Links are defined with A, AREA, LINK elements\
+Represent connection between 2 resources (one is current Document)\
+There are 2 kind of links\
+LINK TO EXTERNAL RESOURCE - augment current document, auto processed by the browser(user agent)\
+HYPERLINK - expose to the user to navigate or download\
+\
+19. TABULAR DATA\
+\
+TABLE - data with more than 1 dimension\
+attributes:\
+border\
+sortable\
+\
+CAPTION -represents title of the table\
+\
+COL, COLGROUP\
+\
+TBODY\
+\
+THEAD\
+\
+TFOOT\
+\
+TR - row\
+\
+TD - data cell in a table\
+\
+TH - data in header cell\
+\
+18. FORMS\
+\
+FORM is component that includes form controls\
+textfields, checkboxes,buttons, range,color pickers\
+provides data processing capabilities\
+\
+FORM is written in several steps\
+a)Write UI\
+b)Implement server side processing\
+c\}Configure UI\
+\
+FORM is root element\
+Most controls are represented by INPUT element (by default one line text element)\
+Controls can have LABEL element for labelling. LABEL tag wrap INPUT tag\
+Each part of a form is considered as paragraph\
+Each element with NAME attribute is passed as  argument along its VALUE attribute\
+\
+ If we want radio buttons as group they must share single name\
+To batch controls (such as radio buttons ) we use FIELDSET tag with LEGEND as first child\
+LEGEND will be the title of such batch component\
+CHECKBOX type represent multiple choice\
+TEL,EMAIL,TIME types\
+\
+TEXTAREA ELEMENT\
+\
+BUTTON element vs type submit attribute on INPUT element\
+BUTTON element - explicit submit, text is placed between opening and closing tag\
+SUBMIT type attribute - text is value attribute, \
+\
+FORM\
+Use action attribute to supply url that will process the form\
+Use method attribute to make POST or GET (default get)\
+USE enctype attribute to specify how form is encoded (POST only)\
+\
+enctypes:\
+\
+application/x-www-form-urlencoded\
+Default.\
+ All characters are encoded before sent (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)\
+\
+multipart/form-data	No characters are encoded. This value is required when you are using forms that have a file upload control\
+\
+text/plain	Spaces are converted to "+" symbols, but no special characters are encoded\
+\
+\
+\
+RADIO BUTTONS IN GROUP - give them different explicit value to know which is selected\
+CHECKBOX - same thing\
+\
+IF radio button or checkbox is not selected - no data is sent\
+IF radio button or checkbox are selected 2 things happen\
+a) no value attribute - gives us \'93on\'94 value\
+b) explicit value attribute - gives that as value\
+\
+FORM VALIDATION\
+\
+CLIENT SIDE VALIDATION\
+INPUT elements have \'93required\'94 standalone attribute\
+TEXTAREA has \'93maxlength\'94 attribute\
+\
+\
+FORM element\
+attributes:\
+accept-charset - character encoding\
+action - url for processing\
+autocomplete- autofill feature for controls\
+enctype - what content is carried\
+method - GET, POST\
+name - form name\
+no validate - bypass form control validation\
+target - browsing context\
+\
+LABEL element\
+if LABEL wraps another element, no attributes are needed\
+attributes:\
+form - id of the form HTML5\
+for - id of element\
+\
+INPUT\
+attributes\
+\
+accept: hint for expected file type\
+alt: replacement text\
+autocomplete: hint for form autofill feature\
+autofocus: focus form on page load\
+checked\
+dirname\
+disabled\
+form\
+formaction\
+formenctype\
+formmethod\
+formnovalidate\
+formtarget\
+height\
+inputmode\
+list\
+max\
+maxlength\
+min\
+minlength\
+multiple: if user is allowed to select multiple things \
+name\
+pattern\
+placeholder\
+readonly\
+required\
+size\
+src\
+type\
+value\
+width\
+title\
+\
+DATALIST (see SELECT) holds  options for OTHER controls\
+new in HTML5 not supported by Safari\
+\
+SELECT element - control for selecting among set of options - DROPDOWN LIST, SPINNER\
+\
+attributes:\
+autofocus\
+disabled\
+form\
+multiple\
+name\
+required\
+size\
+\
+OPTGROUP- groups OPTION entries in SELECT element\
+\
+OPTION - child entry for DATALIST or SELECT or OPTGROUP\
+\
+TEXTAREA - multiline text\
+attributes:\
+autocomplete\
+autofocus\
+cols\
+dirname\
+disabled\
+form\
+inputmode\
+maxlemgth\
+minlength\
+name\
+placeholder\
+readonly\
+required\
+rows\
+wrap\
+\
+KEYGEN\
+\
+OUTPUT\
+result of a calculation or user action\
+\
+PROGRESS progress bar\
+completion progress of a task\
+can be indeterminate or determinate\
+attributes:\
+value\
+max\
+\
+METER - like determinate PROGRESS \
+new in HTML 5\
+attributes:\
+value\
+min\
+max\
+low\
+high\
+optimum\
+\
+\
+FIELDSET-set of form controls optionally grouped under a common name.\
+\
+LEGEND -first child of a FIELDSET\
+\
+19. SCRIPTING}
