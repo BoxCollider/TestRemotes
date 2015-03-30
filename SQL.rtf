@@ -1,0 +1,133 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 Install XAMPP\
+Turn on internet sharing in system preferences -> sharing\
+Make sure server port is not occupied\
+Start XAMPP - manager-sox icon\
+go to address: localhost to bring XAMPP control panel up\
+htdocs folder - place for he apps on web server\
+\
+show available databases:\
+SHOW DATABASES\
+\
+use some database\
+USE DATABASENAME\
+\
+show tables in selected database\
+SHOW TABLES\
+\
+DDL - Data definition language - define tables, indexes, relationships\
+DML- Data manipulation language - add queries, manipulate data\
+\
+show table structure\
+DESCRIBE TABLENAME\
+\
+Select all data\
+SELECT * FROM TABLENAME\
+\
+INSERT - add data, has options\
+\
+UPDATE - change values\
+\
+DELETE - removes\
+\
+COUNT - statistical data function\
+\
+SELECT statement - get result\
+\
+Select all columns\
+SELECT * FROM TABLENAME\
+ORDER IS NOT GUARANTEED unless specified\
+\
+Select with order\
+SELECT * FROM TABLENAME ORDER BY TABECOLUMNNAME\
+\
+Select one column\
+SELECT COLUMNNAME FROM TABLENAME\
+\
+Select multiple columns\
+SELECT COLUMNONENAME, COLUMNTWONAME FROM TABLENAME\
+\
+Single quotation marks by default\
+\
+override column name - use AS keyword (optional)\
+\
+SELECT Executes expressions\
+SELECT 1+1;\
+\
+Statistics:\
+Count number of rows\
+SELECT COUNT(*) FROM TABLENAME\
+\
+Count may be combined with WHERE clause\
+\
+Select some rows:\
+SELECT * FROM TABLENAME WHERE COLUMNNAME = \'91SOMEVALUE\'92\
+use single quotes!!!\
+\
+WHERE clause may accept logical operators\
+\
+LIMIT results\
+SELECT SOMECOLUMN FROM SOMETABLE LIMIT 6\
+\
+Insert data\
+insert into  (SOMECOLUMNNAME, OTHERCOLUMNNAME, LASTCOLUMNNAME) values (\'91SOMEVALUE\'92, \'91OTHERVALUE\'92,\'92LASTVALUE\'92);\
+\
+NULL - lack of data\
+Default values can be provided in advance\
+\
+UPDATE - modify existing data \
+update TABLENAME set COLUMNNAME = \'91NEWVALUE\'92 where id = 3;\
+ATTENTION!!! if we do not specify a condition new value is propagated trough all cells in column\
+\
+DELETE  - deletes rows\
+DELETE FROM TABLENAME WHERE id = 5;\
+\
+DATABASE - set of tables\
+Tables can have relations\
+SQL 2011 last specification\
+NO vendor supports completely that specification - MYSQL, ORACLE, POSTGRE, MS SQL SERVER\
+\
+SQL - no case sensitive\
+Statements end with SEMOCOLON\
+Comments \'97 comment\
+C style multiline comments /*  */\
+\
+CREATE TABLES\
+\
+DELETE TABLE:\
+DROP TABLE TABLENAME\
+DROP TABLE IF EXISTS TABLENAME\
+\
+WE can use results of SELECT statement to insert rows\
+\
+CONSTRAINTS\
+NOT NULL\
+UNIQUE\
+LENGTH/VALUES\
+DEFAULT VALUE\
+\
+
+\b CHANGE TABLE SCHEMA(STRUCTURE)\
+
+\b0 ALTER Statement\
+Use with caution\
+\
+ID columns - hold unique values\
+\
+Create table\
+\
+CREATE TABLE TABLENAME (\
+id INTEGER PRIMARY KEY,\
+a INTEGER,\
+b TEXT\
+);\
+\
+
+\b FIND SPECIFIC DATA
+\b0 \
+WHERE clause}
