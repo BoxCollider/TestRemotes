@@ -1,5 +1,5 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
-{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fmodern\fcharset0 Courier;}
 {\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red109\green109\blue109;\red179\green179\blue179;
 \red25\green60\blue111;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww18220\viewh11080\viewkind0
@@ -345,9 +345,188 @@ RESOURCE ADAPTER MODULES -Classes, Interfaces, native libraries and optional dep
 
 \b \ul Packaging Enterprise Beans\
 
+\b0 \ulnone EJB JAR file is portable and can be used for various applications\
+EAR - assembly of modules such as EJB JAR files\
+When deploying EAR file containing EJB bean, we also deploy EJB bean to Glassfish server\
+We can deploy standalone EJB bean also\
+EJB beans can be packaged as jar library in WAR module WEB-INF/lib or as Classes in WAR module WEB-INF/classes\
+WAR modules that contain enterprise bean do not require ejb-jar.xml deployment descriptor\
+If Application uses ejb-jar.xml it must be located in WEB-INF directory\
+If we have JAR file with enterprise bean within WAR module - that is not EJB jar fie\
+Environment namespace is scoped to WAR module\
+\
+
+\b \ul Packaging Web Archives\
+
 \b0 \ulnone \
+In JAVA EE  the WEB MODULE is smallest deployable and usable unit of web resources\
+WEB MODULE corresponds to web application as defined in Servlet specification\
+WEB MODULE contains web components and static web content files(resources)\
++ Server side utility classes\
++Client side classes\
+DOCUMENT ROOT - top level directory.\
+Contains XHTML pages, Client side classes and archives and static web resources\
+Contains subdirectory WEB-INF(not accessible for client)\
+WEB inf has subfolder 
+\b \expnd0\expndtw0\kerning0
+classes 
+\b0 \expnd0\expndtw0\kerning0
+and 
+\b \expnd0\expndtw0\kerning0
+lib
+\b0 \expnd0\expndtw0\kerning0
+ \
+WEB inf has deployment descriptors\
+WEB MODULE NEEDS web.xml if it uses JSF and must specify some security, or if it wants to override annotated classes\
+WEB MODULE can be packed WAR or UNPACKED\
+glassfish-web.xml  is RUNTIME Deployment descriptor we can deploy.\
+\
+
+\b \ul Packaging resource adapter archives
+\b0 \ulnone \
+\pard\pardeftab720
+
+\fs26 \cf2 \expnd0\expndtw0\kerning0
+A Resource Adapter Archive (RAR) file stores XML files, Java classes, and other objects for Java EE Connector Architecture (JCA) applications
+\fs24 \cf0 \expnd0\expndtw0\kerning0
+\
+  \
+\
+\pard\pardeftab720
+
+\b \cf0 \ul \ulc0 The WEB tier\
+
+\b0 \ulnone Web apps fall in 2 categories:\
+PRESENTATION ORIENTED - generate interactive web pages. JSF and Servlet technologies \
+SERVICE ORIENTED - implement the endpoint of a web service. often has as client presentation oriented app. JAX-WS, JAX-RS technologies\
+\
+
+\b \ul Web apps\
+
+\b0 \ulnone WEB COMPONENTS - provide dynamic extension to the web server\
+They can be JSP pages,JSF pages, Servlets,web service endpoints\
+\
+ex. Client makes request to server. Server converts that request to HTTPServletRequest and passes it to a web  component A.\
+      That web component  A interacts with JavaBeans component or database and generates dynamic content.\
+      Web component  A generates HTTPServletResponse or passes the request to another web component B\
+      B eventually generates HTTPServletResponse.\
+      Server then converts response to HTTP response and delivers the response to the client\
+\
+Servlets are best suited to service oriented apps\
+JSF and faceless are best suited for markup generation for presentation oriented apps\
+\
+Web container provides various services  to and manages lifecycle of web components\
+Configuration information can be provided at deployment time using annotations or deployment descriptor(conforms to Java Servlet specification)\
+\
+JSF managed beans  - javax.faces.bean\
+CDI managed beans - java.inject , javax.enterprise.context\
+EJB managed beans - javax.ejb\
+WHO IS BETTER?\
+Ask Stack Overflow:\
+http://stackoverflow.com/questions/11986847/java-ee-6-javax-annotation-managedbean-vs-javax-inject-named-vs-javax-faces\
 \
 \
+ex.      Landing page index.XHTML - facelet\
+	Managed bean as java class  Bean- annotated with : @ManagedBean and @SessionScoped (javax.faces.bean)\
+	EL references to the bean 
+\f1\fs26 \cf2 \expnd0\expndtw0\kerning0
+#\{bean.name\}\
+	
+\f0 \cf2 \expnd0\expndtw0\kerning0
+In case no name attribute is provided in annotation we use default name of the class starting with lower letter\
+\
+We can inject resource only in managed components\
+Who is managed?\
+Servlet, ServletFilter, EventListeners,Managed Beans(POJO)\
+\
+\pard\pardeftab720
+
+\b \cf2 Declare resource reference
+\b0  with @Resource annotation\
+Who is the resource?\
+data source, enterprise bean, environment entry\
+\
+@Resource annotation - specified on class, method, field\
+\
+Who is responsible for injecting references and mapping to JNDI?\
+Container \
+\
+inject single resource - @Resource\
+inject multiple resources @Resources\
+\
+JPA can access database without @Resource annotation\
+\
+Declare web service reference @WebServiceRef (jax-ws)\
+\
+
+\b \ul JAVA SERVER FACES Technology\
+
+\b0 \ulnone JSF - Server side component framework\
+Contains API and Tag libraries\
+\
+Tasks we  could accomplish easily:\
+\pard\pardeftab720
+
+\fs24 \cf0 \expnd0\expndtw0\kerning0
+Create web page\
+Drop components onto web page by adding component tags\
+Bind components on a page to a server side data\
+Wire component generated events to server side code\
+Save and restore app state beyond request\
+Reuse and extend components\
+\
+JSF APP Phases\
+Execute\
+Render\
+\
+javax.faces.component.UIComponent  - BASE CLASS FOR JSF UI COMPONENTS\
+In addition to extending UIComponentBase, the component classes also implement one or more behavioral interfaces, each of which defines certain behavior for a set of components whose classes implement the interface.\
+\
+javax.faces.render.Renderer - how to render UI components\
+\
+Binding UI component to server side object data such as ManagedBean\
+\
+Events:\
+The JavaServer Faces specification defines three types of events: application events, system events, and data-model events.\
+\
+Application events:\
+action events: 
+\b \expnd0\expndtw0\kerning0
+javax.faces.event.ActionEvent
+\b0 \expnd0\expndtw0\kerning0
+ . For components that implement ActionSource. Click on a Button or link\
+value change events: 
+\b \expnd0\expndtw0\kerning0
+javax.faces.event.ValueChangeEvent.
+\b0 \expnd0\expndtw0\kerning0
+ Change to UIInput or descendant classes. These events are fired only after successful validation\
+To handle events:\
+a)\
+Implement an event listener class to handle the event, and register the listener on the component by nesting either an f:valueChangeListener tag or an f:actionListener tag inside the component tag.\
+b)\
+Implement a method of a managed bean to handle the event, and refer to the method with a method expression from the appropriate attribute of the component's tag.\
+\
+Depending on the value of the immediate property (see The immediate Attribute) of the component emitting the event, action events can be processed during the Invoke Application phase or the Apply Request Values phase, and value-change events can be processed during the Process Validations phase or the Apply Request Values phase.\
+\
+System events: generated by an Object at predefined times. Applicable to entire application\
+\
+Data model event - new row of UIData UI component is selected\
+\
+VALIDATION\
+\
+LIFECYCLE\
+Client make request\
+BEGIN APP\
+app returns response to the client\
+SHUT DOWN APP\
+\
+Some music:\
+https://www.youtube.com/watch?v=dtYzcAv5l9U&list=RDMTcaex6-rZg\
+\
+Requests: Initial and Postback\
+\
+TAG LIBRARIES\
+Faclet, JSF. JSTL\
 \pard\pardeftab720
 
 \b\fs36 \cf0 \expnd0\expndtw0\kerning0

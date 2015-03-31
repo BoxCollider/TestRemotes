@@ -4,7 +4,16 @@
 \paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\f0\fs24 \cf0 Install XAMPP\
+\f0\fs24 \cf0 Lynda sql essential training\
+http://www.lynda.com/SQL-tutorials/SQL-Essential-Training/139988-2.html\
+\
+W3Scools page\
+http://www.w3schools.com/sql/default.asp\
+\
+MYSQL docs\
+http://dev.mysql.com/doc/refman/5.7/en/\
+\
+Install XAMPP\
 Turn on internet sharing in system preferences -> sharing\
 Make sure server port is not occupied\
 Start XAMPP - manager-sox icon\
@@ -130,4 +139,37 @@ b TEXT\
 
 \b FIND SPECIFIC DATA
 \b0 \
-WHERE clause}
+WHERE clause\
+\
+MODIFY COLUMN DEFENITION\
+alter table mytableTABLENAME modify COLUMN COLUMNNAME INTEGER(20) PRIMARY KEY NOT NULL AUTO_INCREMENT;\
+\
+select multiple tables\
+\
+SELECT * FROM FIRSTTABLENAME, SECONDTABLENAME, THIRDTABLENAME\
+!!! BAD THINGS HAPPEN - IMPLICIT CROSS JOIN\
+\
+SELECT * FROM FIRSTTABLENAME CROSS JOIN SECONDTABLENAME\
+EXPLICIT CROSS JOIN\
+\
+CROSS JOIN - CARTESIAN PRODUCT ALL*ALL\
+\
+
+\b JOINS - intersections based on common field\
+
+\b0 id field often is used\
+inner join - intersection A AND B  (default)\
+left outer join A  + B(where B AND A)  \
+right join not supported everywhere\
+outer join A+B\
+\
+INNER JOIN:\
+select * from TABLE1 inner join TABLE2 on TABLE1.id = TABLE2.id;\
+JOINS and presents side by side tables\
+\
+select TABLE1.COLUMN_X, TABLE2.COLUMN_Y from TABLE1 inner join TABLE2 on TABLE1.id = TABLE2.id;\
+\
+UPDATE SIMPLE CELL\
+update TABLENAME set COLUMNNAME=NEWVALUE where iCOLUMNNAME=OLDVALUE;\
+\
+}
